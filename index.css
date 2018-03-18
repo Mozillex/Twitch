@@ -54,48 +54,72 @@ body {
 }
 
 .content > div {
+	position: relative;
 	background-color: lightskyblue;
 	color: royalblue;
-	/* min-height: 250px; */
-	box-shadow: 1px 1px 7px 0px #474747;
+
 	max-width: 300px;
 	max-height: 600px;
 	padding: 10px;
 	border-radius: 6px;
 }
-.content > div.offline {
-	opacity: 0.5;
-	box-shadow: inset 1px 3px 8px 0px black;
+
+.content > div.live {
+	box-shadow:
+		1px 1px 7px 0px #474747,
+		inset 0px -1px 10px 2px rgba(0, 0, 0, 0.35),
+		inset 1px 1px 60px 45px rgba(255, 255, 255, 0.5);
 }
 
-.content > div > img {
+.content > div.offline {
+	box-shadow:
+		inset 1px 2px 1px rgba(0,0,0,0.6),
+		inset 0px -1px 15px 3px rgba(0,0,0,0.6);
+	opacity: 0.5;
+}
+
+
+div.img {
 	width: 100%;
-	max-width: 300px;
-	height: 100%;
-	max-height:250px;
+	max-height:300px;
 	object-fit: cover;
 	border-radius: 6px;
-
+	overflow: hidden;
 }
 
-.content > div > iframe {
+img {
 	width: 100%;
-	max-width: 400px;
-	height: 100%;
-	max-height:400px;
-	object-fit: cover;
 }
 
-.status {
-	position: relative;
+.controls{
+	opacity: unset;
+	opacity: 1;
+	font-size: 0.9rem;
+}
+div.status {
+	position: absolute;
 	bottom: 5px;
 	left: 5px;
 }
 
-.off {
-	font-family: monospace;
+div.link {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+
+span.offline {
 	color: red;
-	text-shadow: 1px 1px 7px red;
+	text-shadow: 0 0 3px red, 0 0 5px white;
+}
+
+span.live {
+	font-weight: bold;
+	font-size: 1rem;
+	color: red;
+	text-shadow: 0px 0px 12px white;
+	text-shadow: 0 0 6px white;
+
 }
 
 .main-footer {
