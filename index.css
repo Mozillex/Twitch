@@ -8,7 +8,7 @@ h2	{font-size: 1.75rem;}
 h3	{font-size: 1.5rem;}
 p	{font-size: 1rem;}
 small {font-size: 0.75rem;}
-
+a {text-decoration: none;}
 body {
 	max-width: 100vw;
 	max-height:100vh;
@@ -27,12 +27,13 @@ body {
 }
 
 .button {
-	border: 2px solid lightskyblue;
-	background-color: lightskyblue;
+	border: 2px solid #87cefa9e;
+	background-color: #87cefa9e;
 	border-radius: 4px;
 	padding: 2px 4px 4px 2px;
 	font-weight: bold;
 	color: royalblue;
+	cursor: pointer;
 }
 
 .collapse > span {
@@ -53,42 +54,50 @@ body {
 	margin-bottom: 10px;
 }
 
-.content > div {
+.content > div > div{
 	position: relative;
 	background-color: lightskyblue;
 	color: royalblue;
 
-	max-width: 300px;
-	max-height: 600px;
+	/* max-width: 300px; */
+	/* max-height: 600px; */
+	max-width: 350px;
+	height: 500px;
+
 	padding: 10px;
 	border-radius: 6px;
 }
 
-.content > div.live {
+.content > div > div.live {
 	box-shadow:
 		1px 1px 7px 0px #474747,
 		inset 0px -1px 10px 2px rgba(0, 0, 0, 0.35),
 		inset 1px 1px 60px 45px rgba(255, 255, 255, 0.5);
 }
 
-.content > div.offline {
+.content > div > div.offline {
 	box-shadow:
 		inset 1px 2px 1px rgba(0,0,0,0.6),
 		inset 0px -1px 15px 3px rgba(0,0,0,0.6);
-	opacity: 0.5;
+	opacity: 0.7;
+
 }
 
+.noShow {
+	display: none;
+}
 
 div.img {
 	width: 100%;
-	max-height:300px;
-	object-fit: cover;
+	max-height:350px; */
+	/* object-fit: cover; */
 	border-radius: 6px;
 	overflow: hidden;
 }
 
 img {
 	width: 100%;
+	object-fit: cover;
 }
 
 .controls{
@@ -125,4 +134,29 @@ span.live {
 .main-footer {
 	width: 100%;
 	height: 100px;
+}
+
+iframe {
+	object-fit: cover;
+	width: 100%;
+}
+
+#modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	text-align:center;
+	background-color: rgba(0, 0, 0, 0.85);
+	color: white;
+	z-index: 5;
+	height: 100vh;
+	width: 100vw;
+	padding: 10px;
+}
+#mod_btn {
+	font-size: 1.5rem;
+	font-weight: bold;
+	display: block;
+
 }
