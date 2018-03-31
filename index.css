@@ -1,3 +1,9 @@
+:root {
+	--e-time: 0.5s;
+	--e-reps: 5;
+	--e-opac: 1;
+}
+
 html {
 	font-family: "helvetica neue",arial, sans-serif;
 	font-size: 12pt;
@@ -19,7 +25,6 @@ body {
 .container {
 	width: 100%;
 	box-sizing: border-box;
-
 }
 
 .center {
@@ -42,8 +47,45 @@ body {
 }
 
 .main-header {
+	display: grid;
+	/* grid-template-columns: repeat(3,1fr); */
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 	width: 100%;
+}
+
+.header-block {
+	width: auto;
+	margin: auto auto;
+}
+
+.header-block.input > input, button {
+	font-size: 1.5rem;
+	background-color: lightskyblue;
+	border-radius: 6px;
+	border-color: transparent;
+	color: royalblue;
+}
+.header-block.right {
+	margin-right: 10px;
+}
+
+#twitch-logo {
 	height: 100px;
+	animation-name: twitch;
+	animation-duration: 0.07s;
+	animation-delay: 4s;
+	animation-direction: alternate;
+	animation-iteration-count: 5;
+	opacity: 0.7;
+}
+
+@keyframes twitch {
+	0%	 {opacity: 0;}
+	20% {opacity: 0.2;}
+	40% {opacity: 0.7;}
+	80%{opacity: 0.3;}
+	90%{opacity: 1;}
+	100%{opacity: 0.7;}
 }
 
 .content {
@@ -58,12 +100,8 @@ body {
 	position: relative;
 	background-color: lightskyblue;
 	color: royalblue;
-
-	/* max-width: 300px; */
-	/* max-height: 600px; */
 	max-width: 350px;
 	height: 500px;
-
 	padding: 10px;
 	border-radius: 6px;
 }
@@ -83,24 +121,12 @@ body {
 
 }
 
-.noShow {
-	display: none;
-}
-
-div.img {
-	width: 100%;
-	max-height:350px; */
-	/* object-fit: cover; */
-	border-radius: 6px;
-	overflow: hidden;
-}
-
 img {
 	width: 100%;
 	object-fit: cover;
 }
 
-.controls{
+.controls {
 	opacity: unset;
 	opacity: 1;
 	font-size: 0.9rem;
@@ -139,24 +165,4 @@ span.live {
 iframe {
 	object-fit: cover;
 	width: 100%;
-}
-
-#modal {
-	display: none;
-	position: fixed;
-	top: 0;
-	left: 0;
-	text-align:center;
-	background-color: rgba(0, 0, 0, 0.85);
-	color: white;
-	z-index: 5;
-	height: 100vh;
-	width: 100vw;
-	padding: 10px;
-}
-#mod_btn {
-	font-size: 1.5rem;
-	font-weight: bold;
-	display: block;
-
 }
